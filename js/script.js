@@ -76,3 +76,5 @@ function displayBooks(library, parent) {
 
 const body = document.getElementsByTagName("body")[0];
 
+displayBooks(myLibrary, body);
+
