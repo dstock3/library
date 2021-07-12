@@ -31,6 +31,13 @@ function addBookToLibrary(library) {
     return book
 };
 
+function elementBuilder (elType, className, parent) {
+    const newElement = document.createElement(elType);
+    newElement.classList.add(className);
+    parent.appendChild(newElement);
+    return newElement;
+};
+
 function displayBooks(library) {
     for (i = 0; i < library.length; i++) {
 
