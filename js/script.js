@@ -5,7 +5,7 @@ const psycho = new Book(`American Psycho`, `Bret Easton Ellis`, 399, `no`);
 
 let myLibrary = [gatsby, madame, meta, psycho];
 
-function Book(title, author, pages, read, ) {
+function Book(title, author, pages, read) {
     this.title = title
     this.author = author
     this.pages = pages
@@ -17,6 +17,13 @@ function Book(title, author, pages, read, ) {
       } else if (read === `yes`) {
         let read = 'read';
         return `${title} by ${author}, ${pages}, ${read}`
+      }
+    }
+    this.changeReadStatus = function() {
+      if (read === `no`) {
+        this.read = 'yes';
+      } else if (read === `yes`) {
+        this.read = 'no';
       }
     }
 };
@@ -67,6 +74,9 @@ function displayBooks(library, parent) {
     let books = elementBuilder("div", "books", libraryElement);
 
     for (i = 0; i < library.length; i++) {
+        let book = library[i];
+        let title = library[i].title;
+
         let card = elementBuilder("article", "book", books);
         let titleElement = elementBuilder("h2", "title", card);
         let titleContent = document.createTextNode(library[i].title);
@@ -90,7 +100,7 @@ function displayBooks(library, parent) {
         readButton.appendChild(readButtonContent);
 
         readButton.addEventListener('click', () => {
-          library[i].toggleAttribute('read');
+          book.changeReadStatus();
           libraryElement.remove();
           return displayBooks(library, parent);
         });
@@ -99,8 +109,6 @@ function displayBooks(library, parent) {
         let removeButton = elementBuilder("button", "remove-book", buttonDiv);
         let removeButtonContent = document.createTextNode(`Remove From Library`);
         removeButton.appendChild(removeButtonContent);
-
-        let title =library[i].title;
 
         removeButton.addEventListener('click', () => {
           removeFromLibrary(title, library);
