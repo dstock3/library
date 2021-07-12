@@ -5,7 +5,7 @@ const psycho = new Book(`American Psycho`, `Bret Easton Ellis`, 399, `no`);
 
 let myLibrary = [gatsby, madame, meta, psycho];
 
-function Book(title, author, pages, read) {
+function Book(title, author, pages, read, ) {
     this.title = title
     this.author = author
     this.pages = pages
@@ -50,11 +50,14 @@ function elementBuilder (elType, className, parent) {
 function displayBooks(library, parent) {
     let libraryElement = elementBuilder("section", "library", parent);
     let libraryHead = elementBuilder("h1", "library-head", libraryElement);
+    
     let headContent = document.createTextNode(`My Library`);
     libraryHead.appendChild(headContent);
 
+    let books = elementBuilder("div", "books", libraryElement);
+
     for (i = 0; i < library.length; i++) {
-        let card = elementBuilder("article", `book-${[i + 1]}`, libraryElement);
+        let card = elementBuilder("article", "book", books);
         let titleElement = elementBuilder("h2", "title", card);
         let titleContent = document.createTextNode(library[i].title);
         titleElement.appendChild(titleContent);
