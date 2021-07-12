@@ -1,8 +1,8 @@
 const gatsby = new Book(`The Great Gatsby`, `F Scott Fitzgerald`, 255, `yes`);
-const madam = new Book(`Madame Bovary`, `Gustave Flaubert`, 368, `no`);
+const madame = new Book(`Madame Bovary`, `Gustave Flaubert`, 368, `no`);
 const meta = new Book(`The Metamorphosis`, `Franz Kafka`, 250, `yes`);
 
-let myLibrary = [gatsby, capital, meta];
+let myLibrary = [gatsby, madame, meta];
 
 function Book(title, author, pages, read) {
     this.title = title
@@ -22,4 +22,10 @@ function Book(title, author, pages, read) {
 
 function addBookToLibrary(book, library) {
     library.push(book);
+};
+
+function displayBooks(library) {
+    for (i = 0; i < library.length; i++) {
+
+    };
 };
