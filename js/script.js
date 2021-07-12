@@ -20,8 +20,14 @@ function Book(title, author, pages, read) {
     }
 };
 
-function addBookToLibrary(book, library) {
+function addBookToLibrary(library) {
+    let title = window.prompt("Please enter the title of your new book.");
+    let author = window.prompt("Please enter the author.");
+    let pages = window.prompt(parseInt("Please enter the number of pages."));
+    let read = window.prompt("Have you read this book before?");
+    let book = new Book(title, author, pages, read);
     library.push(book);
+    return book
 };
 
 function displayBooks(library) {
