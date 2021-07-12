@@ -85,7 +85,16 @@ function displayBooks(library, parent) {
         readElement.appendChild(readContent);
 
         let buttonDiv = elementBuilder("div", "book-buttons", card)
-        let readButton
+        let readButton = elementBuilder("button", "read-status", buttonDiv);
+        let readButtonContent = document.createTextNode(`Change Read Status`);
+        readButton.appendChild(readButtonContent);
+
+        readButton.addEventListener('click', () => {
+          library[i].toggleAttribute('read');
+          libraryElement.remove();
+          return displayBooks(library, parent);
+        });
+
 
         let removeButton = elementBuilder("button", "remove-book", buttonDiv);
         let removeButtonContent = document.createTextNode(`Remove From Library`);

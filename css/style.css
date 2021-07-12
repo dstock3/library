@@ -6,7 +6,7 @@
 .library-head {
     margin: auto;
     padding: 2%;
-    font-size: 2em;
+    font-size: 2.5em;
 }
 
 .add-book {
@@ -23,14 +23,20 @@
 }
 
 .book {
+    display: flex;
+    flex-direction: column;
     border: 2px solid black;
     padding: 2%;
+}
+
+.title {
+    font-size: 1.75em;
+    align-self: center;
 }
 
 .book-buttons {
     display: flex;
     justify-content: space-around;
-
 }
 
 
