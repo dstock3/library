@@ -40,9 +40,22 @@ function elementBuilder (elType, className, parent) {
 
 function displayBooks(library, parent) {
     for (i = 0; i < library.length; i++) {
-        let titleElement = elementBuilder("h2", "book-title", parent);
+        let titleElement = elementBuilder("h2", "title", parent);
         let titleContent = document.createTextNode(`${library[i].title}`);
         titleElement.appendChild(titleContent);
+
+        let authorElement = elementBuilder("p", "author", parent);
+        let authorContent = document.createTextNode(`${library[i].author}`);
+        authorElement.appendChild(authorContent);
+
+        let pageElement = elementBuilder("p", "pages", parent);
+        let pageContent = document.createTextNode(`${library[i].pages}`);
+        pageElement.appendChild(pageContent);
+
+        let readElement = elementBuilder("p", "read", parent);
+        let readContent = document.createTextNode(`${library[i].read}`);
+        readElement.appendChild(readContent);
+
     };
 };
 
