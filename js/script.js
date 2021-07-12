@@ -54,6 +54,16 @@ function displayBooks(library, parent) {
     let headContent = document.createTextNode(`My Library`);
     libraryHead.appendChild(headContent);
 
+    let addButton = elementBuilder("button", "add-book", libraryElement);
+    let addButtonContent = document.createTextNode(`Add Book to Library`);
+    addButton.appendChild(addButtonContent);
+
+    addButton.addEventListener('click', () => {
+      addBookToLibrary(library);
+      libraryElement.remove();
+      return displayBooks(library, parent);
+    });
+
     let books = elementBuilder("div", "books", libraryElement);
 
     for (i = 0; i < library.length; i++) {

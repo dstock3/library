@@ -9,7 +9,13 @@
     font-size: 2em;
 }
 
+.add-book {
+    width: 250px;
+    margin: auto;
+}
+
 .books {
+    padding-top: 15px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
