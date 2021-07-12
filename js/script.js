@@ -69,7 +69,7 @@ function displayBooks(library, parent) {
     for (i = 0; i < library.length; i++) {
         let card = elementBuilder("article", "book", books);
         let titleElement = elementBuilder("h2", "title", card);
-        let titleContent = document.createTextNode(`Title: ${library[i].title}`);
+        let titleContent = document.createTextNode(library[i].title);
         titleElement.appendChild(titleContent);
 
         let authorElement = elementBuilder("p", "author", card);
