@@ -32,6 +32,14 @@ function addBookToLibrary(library) {
     return book
 };
 
+function removeFromLibrary(title, library){
+  for (i = 0; i < library.length; i++) {
+    if (library[i].title === title) {
+      library.splice(i, 1);
+    };
+  };
+};
+
 function elementBuilder (elType, className, parent) {
     const newElement = document.createElement(elType);
     newElement.classList.add(className);
