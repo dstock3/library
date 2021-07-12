@@ -20,9 +20,9 @@ function Book(title, author, pages, read) {
       }
     }
     this.changeReadStatus = function() {
-      if (read === `no`) {
+      if (this.read === `no`) {
         this.read = 'yes';
-      } else if (read === `yes`) {
+      } else if (this.read === `yes`) {
         this.read = 'no';
       }
     }
@@ -104,7 +104,6 @@ function displayBooks(library, parent) {
           libraryElement.remove();
           return displayBooks(library, parent);
         });
-
 
         let removeButton = elementBuilder("button", "remove-book", buttonDiv);
         let removeButtonContent = document.createTextNode(`Remove From Library`);
