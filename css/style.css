@@ -18,13 +18,15 @@
     padding-top: 15px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;   
+    justify-content: space-evenly;   
 }
 
 .book {
     display: flex;
     flex-direction: column;
     border: 2px solid black;
+    background-color: #ff8a92;
+    border-radius: 15px;
     padding: 2%;
     width: 285px;
 }
@@ -39,11 +41,11 @@
     display: flex;
     justify-content: space-evenly;
     width: 220px;
+    border-radius: 20px;
 }
 
 .book-buttons button {
     width: 95px;
-
 }
 
 button {
