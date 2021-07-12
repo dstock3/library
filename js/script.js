@@ -28,6 +28,7 @@ function addBookToLibrary(library) {
     let read = window.prompt("Have you read this book before?");
     let book = new Book(title, author, pages, read);
     library.push(book);
+    displayBooks(library, body);
     return book
 };
 
@@ -60,3 +61,4 @@ function displayBooks(library, parent) {
 };
 
 const body = document.getElementsByTagName("body")[0];
+
