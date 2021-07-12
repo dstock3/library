@@ -62,6 +62,8 @@ function displayBooks(library, parent) {
         let titleContent = document.createTextNode(library[i].title);
         titleElement.appendChild(titleContent);
 
+        let title =library[i].title
+
         let authorElement = elementBuilder("p", "author", card);
         let authorContent = document.createTextNode(library[i].author);
         authorElement.appendChild(authorContent);
@@ -74,6 +76,13 @@ function displayBooks(library, parent) {
         let readContent = document.createTextNode(library[i].read);
         readElement.appendChild(readContent);
 
+        let removeButton = elementBuilder("button", "remove-book", card);
+        let removeButtonContent = document.createTextNode(`Remove From Library`);
+        removeButton.appendChild(removeButtonContent);
+
+        removeButton.addEventListener('click', () => {
+          removeFromLibrary(title, library);
+        });
     };
 };
 
