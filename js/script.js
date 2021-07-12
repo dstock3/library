@@ -84,7 +84,10 @@ function displayBooks(library, parent) {
         let readContent = document.createTextNode(`Read: ${library[i].read}`);
         readElement.appendChild(readContent);
 
-        let removeButton = elementBuilder("button", "remove-book", card);
+        let buttonDiv = elementBuilder("div", "book-buttons", card)
+        let readButton
+
+        let removeButton = elementBuilder("button", "remove-book", buttonDiv);
         let removeButtonContent = document.createTextNode(`Remove From Library`);
         removeButton.appendChild(removeButtonContent);
 
