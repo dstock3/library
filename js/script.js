@@ -41,6 +41,9 @@ function elementBuilder (elType, className, parent) {
 
 function displayBooks(library, parent) {
     let libraryElement = elementBuilder("section", "library", parent);
+    let libraryHead = elementBuilder("h1", "library-head", libraryElement);
+    let headContent = document.createTextNode(`My Library`);
+    libraryHead.appendChild(headContent);
 
     for (i = 0; i < library.length; i++) {
         let card = elementBuilder("article", `book-${[i + 1]}`, libraryElement);
