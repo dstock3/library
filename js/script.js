@@ -59,29 +59,31 @@ function displayBooks(library, parent) {
     for (i = 0; i < library.length; i++) {
         let card = elementBuilder("article", "book", books);
         let titleElement = elementBuilder("h2", "title", card);
-        let titleContent = document.createTextNode(library[i].title);
+        let titleContent = document.createTextNode(`Title: ${library[i].title}`);
         titleElement.appendChild(titleContent);
 
-        let title =library[i].title
-
         let authorElement = elementBuilder("p", "author", card);
-        let authorContent = document.createTextNode(library[i].author);
+        let authorContent = document.createTextNode(`Author: ${library[i].author}`);
         authorElement.appendChild(authorContent);
 
         let pageElement = elementBuilder("p", "pages", card);
-        let pageContent = document.createTextNode(`${library[i].pages}`);
+        let pageContent = document.createTextNode(`Number of Pages: ${library[i].pages}`);
         pageElement.appendChild(pageContent);
 
         let readElement = elementBuilder("p", "read", card);
-        let readContent = document.createTextNode(library[i].read);
+        let readContent = document.createTextNode(`Read: ${library[i].read}`);
         readElement.appendChild(readContent);
 
         let removeButton = elementBuilder("button", "remove-book", card);
         let removeButtonContent = document.createTextNode(`Remove From Library`);
         removeButton.appendChild(removeButtonContent);
 
+        let title =library[i].title;
+
         removeButton.addEventListener('click', () => {
           removeFromLibrary(title, library);
+          libraryElement.remove();
+          return displayBooks(library, parent);
         });
     };
 };
