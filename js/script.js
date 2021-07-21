@@ -30,33 +30,6 @@ const psycho = new Book(`American Psycho`, `Bret Easton Ellis`, 399, `no`);
 
 let myLibrary = [gatsby, madame, meta, psycho];
 
-
-
-/*
-function Book(title, author, pages, read) {
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read
-    this.info = function() {
-      if (read === `no`) {
-        let read = 'not yet read'
-        return `${title} by ${author}, ${pages}, ${read}`
-      } else if (read === `yes`) {
-        let read = 'read';
-        return `${title} by ${author}, ${pages}, ${read}`
-      }
-    }
-    this.changeReadStatus = function() {
-      if (this.read === `no`) {
-        this.read = 'yes';
-      } else if (this.read === `yes`) {
-        this.read = 'no';
-      }
-    }
-};
-*/
-
 function addBookToLibrary(library) {
     let title = window.prompt("Please enter the title of your new book.");
     let author = window.prompt("Please enter the author.");
