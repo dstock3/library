@@ -1,11 +1,5 @@
-const gatsby = new Book(`The Great Gatsby`, `F Scott Fitzgerald`, 255, `yes`);
-const madame = new Book(`Madame Bovary`, `Gustave Flaubert`, 368, `no`);
-const meta = new Book(`The Metamorphosis`, `Franz Kafka`, 250, `yes`);
-const psycho = new Book(`American Psycho`, `Bret Easton Ellis`, 399, `no`);
-
-let myLibrary = [gatsby, madame, meta, psycho];
-
-function Book(title, author, pages, read) {
+class Book {
+  constructor(title, author, pages, read) {
     this.title = title
     this.author = author
     this.pages = pages
@@ -26,7 +20,15 @@ function Book(title, author, pages, read) {
         this.read = 'no';
       }
     }
-};
+  }
+}
+
+const gatsby = new Book(`The Great Gatsby`, `F Scott Fitzgerald`, 255, `yes`);
+const madame = new Book(`Madame Bovary`, `Gustave Flaubert`, 368, `no`);
+const meta = new Book(`The Metamorphosis`, `Franz Kafka`, 250, `yes`);
+const psycho = new Book(`American Psycho`, `Bret Easton Ellis`, 399, `no`);
+
+let myLibrary = [gatsby, madame, meta, psycho];
 
 function addBookToLibrary(library) {
     let title = window.prompt("Please enter the title of your new book.");
