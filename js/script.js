@@ -1,3 +1,28 @@
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title
+    this.author = author
+    this.pages = pages
+    this.read = read
+    this.info = function() {
+      if (read === `no`) {
+        let read = 'not yet read'
+        return `${title} by ${author}, ${pages}, ${read}`
+      } else if (read === `yes`) {
+        let read = 'read';
+        return `${title} by ${author}, ${pages}, ${read}`
+      }
+    }
+    this.changeReadStatus = function() {
+      if (this.read === `no`) {
+        this.read = 'yes';
+      } else if (this.read === `yes`) {
+        this.read = 'no';
+      }
+    }
+  }
+}
+
 const gatsby = new Book(`The Great Gatsby`, `F Scott Fitzgerald`, 255, `yes`);
 const madame = new Book(`Madame Bovary`, `Gustave Flaubert`, 368, `no`);
 const meta = new Book(`The Metamorphosis`, `Franz Kafka`, 250, `yes`);
@@ -5,6 +30,9 @@ const psycho = new Book(`American Psycho`, `Bret Easton Ellis`, 399, `no`);
 
 let myLibrary = [gatsby, madame, meta, psycho];
 
+
+
+/*
 function Book(title, author, pages, read) {
     this.title = title
     this.author = author
@@ -27,6 +55,7 @@ function Book(title, author, pages, read) {
       }
     }
 };
+*/
 
 function addBookToLibrary(library) {
     let title = window.prompt("Please enter the title of your new book.");
